@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-l_dgt = abs(number) %10
+l_dgt = abs(number) % 10
 if number < 0:
     l_dgt = -l_dgt
 
