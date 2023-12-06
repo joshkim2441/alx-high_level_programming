@@ -4,4 +4,4 @@ def square_matrix_map(matrix=[]):
     square of the corresponding value in the matrix
     Initial matrix is not modified
     """
-    return list(map(lambda row: list(map(lambda x: x**2, row)), matrix))
+    return list(map(lambda row: list(map(lambda x: x ** 2, row)), matrix))
