@@ -3,6 +3,13 @@
 #include <listobject.h>
 #include <bytesobject.h>
 
+void print_python_list(PyObject *p);
+void print_python_bytes(PyObject *p);
+
+/**
+ * print_python_list - Prints basic info about python lists
+ * @p: a PyObject list object
+*/
 void print_python_list(PyObject *p)
 {
 	long int size = PyList_Size(p);
@@ -23,6 +30,10 @@ void print_python_list(PyObject *p)
 	}
 }
 
+/**
+ * print_python_bytes - Prints basic info about python byte objects
+ * @p: a PyObject byte object
+*/
 void print_python_bytes(PyObject *p)
 {
 	char *str = NULL;
