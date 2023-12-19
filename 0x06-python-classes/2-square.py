@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-"""size is a private instance in this class"""
+"""defines a class Square"""
 
 
 class Square:
-    """instantiate an object"""
+    """class Square that represents a square"""
     def __init__(self, size=0):
-        """set the size attribute during the
-        creation of the object
+        """initialize the Square
+        Args:
+            size (int): the size of the square
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
