@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-"""size is a private instance attribute in
-this class
-"""
+"""a class that defines a Square"""
 
 
 class Square:
 
-    """instantiate an object"""
+    """define a class Square"""
     def __init__(self, size):
-        """set the size attribute during
-        the creation of an object
+        """intialize a new class Square
+
+        Args:
+            size (int): the size of the new Square
         """
         self.__size = size  #: size of the square
