@@ -1,12 +1,19 @@
 #!/usr/bin/python3
+
+"""define class square with size and position"""
 class Square:
+    """a class swquare that defines a square"""
     def __init__(self, size=0, position=(0, 0)):
+        """initialize the class"""
         self.__size = size
         self.__position = position
-
+        
+        """initialize private size"""
     @property
     def size(self):
         return self.__size
+
+
 
     @size.setter
     def size(self, value):

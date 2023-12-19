@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """define square with private instance: size"""
+
+
 class Square:
     """instantiate an object, set the size
     during creation of a square object
