@@ -14,11 +14,11 @@ class Square:
 
     @property
     def size(self):
-    """initiate: Private size
+        """initiate: Private size
 
-    Returns:
-        Private size
-    """
+        Returns:
+            Private size
+        """
         return self.__size
 
     @size.setter
