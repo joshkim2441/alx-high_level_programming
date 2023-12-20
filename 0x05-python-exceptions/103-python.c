@@ -59,7 +59,7 @@ void print_python_float(PyObject *p)
 
 	if (!PyFloat_Check(p))
 	{
-		printf("  [Error] Invalid Float Object\n");
+		printf("  [ERROR] Invalid Float Object\n");
 		buff_set(stdout, NULL);
 		return;
 	}
@@ -87,16 +87,16 @@ void print_python_list(PyObject *p)
 
 	if (!PyList_Check(p))
 	{
-		printf("  [Error] Invalid List Object\n");
+		printf("  [ERROR] Invalid List Object\n");
 		buff_set(stdout, NULL);
 		return;
 	}
 
-	sixe = ((PyVarObject *)(p))->ob_size;
+	size = ((PyVarObject *)(p))->ob_size;
 	list = (PyListObject *)p;
 
 	printf("[*] Size of the Python List = %ld\n", size);
-	printf("[*] Allocated = %ld\n", list->Allocated);
+	printf("[*] Allocated = %ld\n", list->allocated);
 
 	for (i = 0; i < size; i++)
 	{
