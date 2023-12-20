@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <Python.h>
+#include <python3.4m/Python.h>
 
 /**
  * print_python_bytes - prints information about bytes
@@ -8,8 +8,8 @@
 */
 void print_python_bytes(PyObject *p)
 {
-	long int size, i, limit;
-	char *string;
+	long int size, j, limit;
+	char *str;
 
 	setbuf(stdout, NULL);
 
@@ -52,7 +52,7 @@ void print_python_bytes(PyObject *p)
 void print_python_float(PyObject *p)
 {
 	char *nflt;
-	double value;
+	double val;
 
 	setbuf(stdout, NULL);
 	printf("[.] float object info\n");
@@ -65,7 +65,7 @@ void print_python_float(PyObject *p)
 	}
 
 	val = ((PyFloatObject *)(p))->ob_fval;
-	nflt = PyOS_double_to_string(val, 'r', 0, Py_DSTF_ADD_DOT_0, Py_DSTF_FINNITE);
+	nflt = PyOS_double_to_string(val, 'r', 0, Py_DTSF_ADD_DOT_0, Py_DTST_FINITE);
 
 	printf("  value: %s\n", nflt);
 	setbuf(stdout, NULL);
@@ -82,7 +82,7 @@ void print_python_list(PyObject *p)
 	long int size, i;
 	PyListObject *list;
 
-	buff_set(stdout, NULL);
+	setbuf(stdout, NULL);
 	printf("[*] Python list info\n");
 
 	if (!PyList_Check(p))
