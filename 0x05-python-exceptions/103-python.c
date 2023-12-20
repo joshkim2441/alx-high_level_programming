@@ -11,13 +11,13 @@ void print_python_bytes(PyObject *p)
 	long int size, i, limit;
 	char *string;
 
-	buff_set(stdout, NULL);
+	setbuf(stdout, NULL);
 
 	printf("[.] bytes object info\n");
 	if (!PyBytes_Check(p))
 	{
 		printf("  [Error] Invalid Bytes Object\n");
-		buff_set(stdout, NULL);
+		setbuf(stdout, NULL);
 		return;
 	}
 
@@ -41,7 +41,7 @@ void print_python_bytes(PyObject *p)
 			printf(" %02x", 256 + str[j]);
 
 	printf("\n");
-	buff_set(stdout, NULL);
+	setbuf(stdout, NULL);
 }
 
 /**
@@ -54,13 +54,13 @@ void print_python_float(PyObject *p)
 	char *nflt;
 	double value;
 
-	buff_set(stdout, NULL);
+	setbuf(stdout, NULL);
 	printf("[.] float object info\n");
 
 	if (!PyFloat_Check(p))
 	{
 		printf("  [ERROR] Invalid Float Object\n");
-		buff_set(stdout, NULL);
+		setbuf(stdout, NULL);
 		return;
 	}
 
@@ -68,7 +68,7 @@ void print_python_float(PyObject *p)
 	nflt = PyOS_double_to_string(val, 'r', 0, Py_DSTF_ADD_DOT_0, Py_DSTF_FINNITE);
 
 	printf("  value: %s\n", nflt);
-	buff_set(stdout, NULL);
+	setbuf(stdout, NULL);
 }
 
 /**
@@ -88,7 +88,7 @@ void print_python_list(PyObject *p)
 	if (!PyList_Check(p))
 	{
 		printf("  [ERROR] Invalid List Object\n");
-		buff_set(stdout, NULL);
+		setbuf(stdout, NULL);
 		return;
 	}
 
@@ -108,5 +108,5 @@ void print_python_list(PyObject *p)
 		if (PyFloat_Check(obj))
 			print_python_float(obj);
 	}
-	buff_set(stdout, NULL);
+	setbuf(stdout, NULL);
 }
