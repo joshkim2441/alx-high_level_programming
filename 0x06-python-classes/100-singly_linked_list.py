@@ -45,15 +45,6 @@ class SinglyLinkedList:
         """initialize a new singly_linked list"""
         self.__head = None
 
-    def __str__(self):
-        """define the print() representation of singlylinked list"""
-        node = self.__head
-        result = []
-        while node is not None:
-            result.append(str(node.data))
-            node = node.next_node
-        return "\n".join(result)
-
     def sorted_insert(self, value):
         """insert a new node to the singly_linked list
 
@@ -75,3 +66,12 @@ class SinglyLinkedList:
                 node = node.next_node
             new_node.next_node = node.next_node
             node.next_node = new_node
+
+    def __str__(self):
+        """define print() representation of a singly linked list"""
+        node = self.__head
+        result = []
+        while node is not None:
+            result.append(str(node.data))
+            node = node.next_node
+        return ("\n".join(result))
