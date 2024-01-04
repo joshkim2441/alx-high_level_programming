@@ -7,8 +7,8 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """Initializes a rectangle with optional width and height."""
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -53,10 +53,8 @@ class Rectangle:
         Returns a string representation of the
         rectangle using '#' characters.
         """
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        return ("#" * self.width + "\n") * self.height
-
-    def __repr__(self):
-        """Returns a string representation of the rectangle for debugging."""
-        return f"Rectangle(width={self.width}, height={self.height})"
+        string = ""
+        if self.__width != 0 or self.__height != 0:
+            string += "\n".join("#" * self.__width
+                    for j in range(self.__height))
+        return string
