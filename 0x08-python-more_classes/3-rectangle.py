@@ -6,7 +6,11 @@ class Rectangle:
     """Represents a rectangle with width and height."""
 
     def __init__(self, width=0, height=0):
-        """Initializes a rectangle with optional width and height."""
+        """Initializes a rectangle with optional width and height.
+        Args:
+            width (int): Width of new rectangle
+            height (int): Height of new rectangle
+        """
         self.width = width
         self.height = height
 
@@ -40,7 +44,7 @@ class Rectangle:
 
     def area(self):
         """Calculates and returns the area of the rectangle."""
-        return self.__width * self.__height
+        return (self.__width * self.__height)
 
     def perimeter(self):
         """Calculates and returns the perimeter of the rectangle."""
@@ -53,8 +57,7 @@ class Rectangle:
         Returns a string representation of the
         rectangle using '#' characters.
         """
-        string = ""
-        if self.__width != 0 or self.__height != 0:
-            string += "\n".join("#" * self.__width
-                    for j in range(self.__height))
-        return string
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        return("\n".join(["".join(["#" for i in range(self.__width)])
+               for j in range(self.__height)]))
