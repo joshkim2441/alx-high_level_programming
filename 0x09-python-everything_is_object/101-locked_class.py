@@ -7,5 +7,4 @@ class LockedClass:
     new instance attributes unless it is called ``first_name``
     """
 
-
     __slots__ = ['first_name']
