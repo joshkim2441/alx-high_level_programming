@@ -14,6 +14,6 @@ if __name__ == "__main__":
         items = load_from_json_file("add_item.json")
     except FileNotFoundError:
         items = []
-    new_items = [arg for arg in sys.argv[1:]]
+    new_items = [sys.argv[1:]]
     items.extend(new_items)
     save_to_json_file(items, "add_item.json")
