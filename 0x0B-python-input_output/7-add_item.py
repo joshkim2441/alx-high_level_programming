@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Adds all arguments to a Python list"""
 
-import json
 import sys
 
 
