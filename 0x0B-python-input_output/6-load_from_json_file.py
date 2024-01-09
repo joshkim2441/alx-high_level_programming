@@ -9,7 +9,7 @@ def load_from_json_file(filename):
     Args:
     filename: The name of the JSON file to load
 
-    Returns: 
+    Returns:
         The desrialized Python object
     """
 

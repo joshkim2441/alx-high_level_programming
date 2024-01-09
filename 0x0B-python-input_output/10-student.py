@@ -30,8 +30,8 @@ class Student:
 
         result = {}
         if attrs is None:
-            attrs = self.__dict__.keys() # Get all attributes
+            attrs = self.__dict__.keys()  # Get all attributes
         for attr in attrs:
-            if hasattr(self, attr): # ensure attribute exists
+            if hasattr(self, attr):  # ensure attribute exists
                 result[attr] = getattr(self, attr)
         return result
