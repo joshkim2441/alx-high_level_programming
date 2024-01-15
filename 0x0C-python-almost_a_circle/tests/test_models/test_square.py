@@ -5,7 +5,6 @@
 import io
 import sys
 import unittest
-import tkinter as TK
 from unittest.mock import patch
 from models.square import Square
 from models.rectangle import Rectangle

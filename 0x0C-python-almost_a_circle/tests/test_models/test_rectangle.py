@@ -4,7 +4,6 @@
 
 import sys
 import unittest
-import tkinter as TK
 import io
 from unittest.mock import patch
 from models.rectangle import Rectangle

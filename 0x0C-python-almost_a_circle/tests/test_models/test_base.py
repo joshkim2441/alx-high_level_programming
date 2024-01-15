@@ -4,7 +4,6 @@
 import os
 import io
 import unittest
-import tkinter as TK
 from models.base import Base
 from models.square import Square
 from models.rectangle import Rectangle
