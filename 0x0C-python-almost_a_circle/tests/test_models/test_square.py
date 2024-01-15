@@ -7,7 +7,6 @@ import sys
 import unittest
 from unittest.mock import patch
 from models.square import Square
-from models.rectangle import Rectangle
 from models.base import Base
 
 
