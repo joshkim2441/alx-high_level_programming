@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """ Module for test Square class """
+import io
+import sys
 import unittest
-from io import StringIO
-from unittest import TestCase
+import tkinter as TK
 from unittest.mock import patch
 from models.square import Square
 from models.rectangle import Rectangle
@@ -447,3 +448,6 @@ class TestSquareMethods(unittest.TestCase):
 
         for i in range(len(linput)):
             self.assertEqual(linput[i].__str__(), loutput[i].__str__())
+
+if __name__ == "__main__":
+    unittest.main()

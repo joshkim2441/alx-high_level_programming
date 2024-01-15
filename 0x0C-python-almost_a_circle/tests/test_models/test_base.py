@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """ A Base class test Module """
+import os
+import io
 import unittest
+import tkinter as TK
 from models.base import Base
 from models.square import Square
 from models.rectangle import Rectangle
-from io import StringIO
-from unittest import TestCase
 from unittest.mock import patch
 
 
@@ -95,3 +96,6 @@ class TestBaseMethods(unittest.TestCase):
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), "[]")
+
+if __name__ == "__main__":
+    unittest.main()
