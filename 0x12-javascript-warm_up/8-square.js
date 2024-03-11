@@ -3,12 +3,12 @@ const size = parseInt(process.argv[2]);
 
 if (!isNaN(size)) {
   for (let i = 0; i < size; i++) {
-    let line = "";
+    let line = '';
     for (let j = 0; j < size; j++) {
-      line += "X";
+      line += 'X';
     }
     console.log(line);
   }
 } else {
-  console.log("Mising size");
+  console.log('Mising size');
 }
