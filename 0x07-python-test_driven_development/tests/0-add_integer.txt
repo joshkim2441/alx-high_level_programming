@@ -1,80 +1,110 @@
-Usage of the ``0-add_integer`` module
-====================================
+The ``0-add_integer`` function module
+======================
 
-It defines a function for additon of integers
-============================================
+Usage of the ``add_integer``
+-------------------
 
-The function returns the sum of its two arguments
-equivalent to usage of the ``+`` operator
-----------------------------------------
+Import the function from the module:
+	>>> add_integer = __import__("0-add_integer").add_integer
 
-Import function from the module:
-    >>> add_integer = __import__("0-add_integer").add_integer
-
-Check the docstring for the module:
-    >>> m = __import__("0-add_integer").__doc__
-    >>> len(m) > 1
-	True
+Check for module docstring:
+	 >>> m = __import__("0-add_integer").__doc__
+	 >>> len(m) > 1
+	 True
 
 Check for function docstring:
 	 >>> f = __import__("0-add_integer").add_integer.__doc__
-     >>> len(f) > 1
-     True
+         >>> len(f) > 1
+         True
 
-Test with regular integers:
+Test for regular addition:
+	 >>> add_integer(3, 6)
+	 9
 
-    >>> add_integer(2, 3)
-    5
+Test for positive with negative:
+	 >>> add_integer(3, -6)
+	 -3
 
-Test with negative and positive:
+Test for negative with positive:
+	 >>> add_integer(-5, 8)
+	 3
 
-    >>> add_integer(-6, 8)
-    2
+Test for addition over multiple values:
+	 >>> [add_integer(i, i ** 2) for i in range(6)]
+	 [0, 2, 6, 12, 20, 30]
 
-Test with float:
+Test for float with int:
+	 >>> add_integer(2.1, 5)
+	 7
 
-    >>> add_integer(2.1, 4)
-    6
+Test for int with float:
+	 >>> add_integer(7, 7.8)
+	 14
 
-Test with negative and positive float:
+Test for both float:
+	 >>> add_integer(3.56, 4.2)
+	 7
 
-    >>> add_integer(-1.5, 2.5)
-    1
+Test for passed NaN:
+	 >>> add_integer(1, float('nan'))
+	 Traceback (most recent call last):
+	 ...
+	 ValueError: cannot convert float NaN to integer
 
-Test with mixed types int and float:
+Test for passed inf:
+	 >>> add_integer(1, float('inf'))
+	 Traceback (most recent call last):
+	 ...
+	 OverflowError: cannot convert float infinity to integer
 
-    >>> add_integer(1, 2.5)
-    3
+Test for super long int:
+	 >>> add_integer(999999999999999999999999999999, 1)
+	 1000000000000000000000000000000
 
-Test with mixed types float and int:
+Test for non-number with number:
+	 >>> add_integer([1], 2)
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: a must be an integer
 
-    >>> add_integer(1.5, 2)
-	3
+Test for number with non-number:
+	 >>> add_integer(3, "2")
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: b must be an integer
 
-Test with super long int:
+Test for non-number with non-number:
+	 >>> add_integer((2,), {"key": "value"})
+         Traceback (most recent call last):
+         ...
+         TypeError: a must be an integer
 
-    >>> add_integer(999999999999999999999999999999, 1)
-    1000000000000000000000000000000
+Test for bool with number:
+	 >>> add_integer(True, 1)
+	 Traceback (most recent call last):
+         ...
+         TypeError: a must be an integer
 
-Test with default argument:
+Test for number with bool:
+	 >>> add_integer(0, False)
+         Traceback (most recent call last):
+         ...
+         TypeError: b must be an integer
 
-    >>> add_integer(1)
-    99
+Test for no args:
+	 >>> add_integer()
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
 
-Test with non-number and int:
+Test for one arg:
+	 >>> add_integer(1)
+	 Traceback (most recent call last):
+         ...
+	 TypeError: add_integer() missing 1 required positional argument: 'b'
 
-    >>> add_integer("1", 2)
-    Traceback (most recent call last):
-    TypeError: a must be an integer
-
-Test if infinity is passed:
-
-    >>> add_integer(float('inf'))
-	Traceback (most recent call last):
-	OverflowError: cannot convert float infinity to integer
-
-Test with NaN numbers:
-
-    >>> add_integer(float('nan'))
-	Traceback (most recent call last):
-	ValueError: cannot convert float NaN to integer
+Test for more than 2 args:
+	 >>> add_integer(3, 4, 5)
+         Traceback (most recent call last):
+         ...
+         TypeError: add_integer() takes 2 positional arguments but 3 were given

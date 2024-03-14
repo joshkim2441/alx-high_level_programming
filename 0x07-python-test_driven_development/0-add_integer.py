@@ -2,7 +2,7 @@
 """Defines a function to add integers and/or float"""
 
 
-def add_integer(a, b=98):
+def add_integer(a, b):
     """Function that adds two integers and/or float number
     Args:
         a: the first number
@@ -16,8 +16,12 @@ def add_integer(a, b=98):
     Raises:
         TypeError: If either a or b is not an integer or float
     """
-    if not isinstance(a, int) and not isinstance(a, float):
+    if type(a) is not int and type(a) is not float:
         raise TypeError("a must be an integer")
-    if not isinstance(b, int) and not isinstance(b, float):
+    if type(b) is not int and type(b) is not float:
         raise TypeError("b must be an integer")
-    return int(a) + int(b)
+    if type(a) is float:
+        a = int(a)
+    if type(b) is float:
+        b = int(b)
+    return a + b

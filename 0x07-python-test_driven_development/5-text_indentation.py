@@ -2,15 +2,20 @@
 """Defines a "5-text_indentation" function"""
 
 
-def text_indentation(ext):
-    if not isinstance(text, str):
+def text_indentation(text):
+    """ Prints 2 new lines after ".?:" characters
+    """
+
+    if type(text) is not str:
         raise TypeError("text must be a string")
 
-    text = text.replace('.', '.\n\n')
-    text = text.replace('?', '?\n\n')
-    text = text.replace(':', ':\n\n')
+    string = text[:]
 
-    lines = text.split('\n')
-    lines = [line.strip() for line in lines]
+    for j in ".?:":
+        list_text = string.split(j)
+        string = ""
+        for a in list_text:
+            a = a.strip(" ")
+            string = a + j if string is "" else string + "\n\n" + a + j
 
-    print('\n'.join(lines))
+    print(string[:-3], end="")
