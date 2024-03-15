@@ -19,19 +19,11 @@ if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format
                            (username, password, db_name), pool_pre_ping=True)
     Base.metadata.create_all(engine)
-    # Create a configured "Session" class
     Session = sessionmaker(bind=engine)
-    # Create a session
     session = Session()
-    # Create new State object
     new_state = State(name='California')
-    # Create new City object
     new_city = City(name='San Francisco')
-    # Add the new city to the state's cities
     new_state.cities.append(new_city)
-    # Add the new state to the session
     session.add(new_state)
-    # Commit the transaction
     session.commit()
-    # Close the session
     session.close()
