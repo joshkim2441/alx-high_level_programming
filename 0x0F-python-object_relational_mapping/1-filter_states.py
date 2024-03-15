@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+List all states with a name starting with uppercase 'N'
+from the hbtn_0e_0_usa database
+"""
+
 import MySQLdb
 from sys import argv
 
