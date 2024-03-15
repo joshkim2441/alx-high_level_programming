@@ -15,8 +15,6 @@ Base = declarative_base()
 class State(Base):
     """ The State class that inherits from Base """
     __tablename__ = 'states'
-    id = Column(Integer, primary_key=True,
-                nullable=False, autoincrement="auto")
+    id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
-    cities = relationship("City", back_populates="state",
-                          cascade="all, delete")
+    cities = relationship("City", backref="state")
