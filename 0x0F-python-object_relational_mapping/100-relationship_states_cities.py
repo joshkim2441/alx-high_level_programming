@@ -24,9 +24,9 @@ if __name__ == "__main__":
     # Create a session
     session = Session()
     # Create new State object
-    new_state = State(name="California")
+    new_state = State(name='California')
     # Create new City object
-    new_city = City(name="San Francisco")
+    new_city = City(name='San Francisco')
     # Add the new city to the state's cities
     new_state.cities.append(new_city)
     # Add the new state to the session
