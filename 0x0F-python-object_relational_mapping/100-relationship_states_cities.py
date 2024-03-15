@@ -31,7 +31,6 @@ if __name__ == "__main__":
     new_state.cities.append(new_city)
     # Add the new state to the session
     session.add(new_state)
-    session.add(new_city)
     # Commit the transaction
     session.commit()
     # Close the session
