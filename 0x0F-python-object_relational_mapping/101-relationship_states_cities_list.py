@@ -18,15 +18,16 @@ if __name__ == "__main__":
     # Create engine that connects to MySQL server
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format
                            (username, password, db_nname), pool_pre_ping=True)
+    Base.metadata.create_all(engine)
     # Create a configured "Session" class
     Session = sessionmaker(bind=engine)
     # Create a session
     session = Session()
     # Query the database for all states, joined with cities
     # ordered by stattes.id and cities.id
-    for state in session.query(State).order_by(State.id):
+    for state in session.query(State).all():
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
-            print("\t{}: {}".format(city,id, city.name))
+            print("\t{}: {}".format(city.id, city.name))
     # Close session
     session.close()

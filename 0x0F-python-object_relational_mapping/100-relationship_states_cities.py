@@ -18,6 +18,7 @@ if __name__ == "__main__":
     # Create engine that connects to MySQL server
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format
                            (username, password, db_nname), pool_pre_ping=True)
+    Base.metadata.create_all(engine)
     # Create a configured "Session" class
     Session = sessionmaker(bind=engine)
     # Create a session
