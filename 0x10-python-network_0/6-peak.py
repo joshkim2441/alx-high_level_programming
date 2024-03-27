@@ -2,7 +2,7 @@
 """ A module that finds a peak in a list of unsorted integers """
 
 
-def peak_find(list_of_ints):
+def find_peak(list_of_ints):
     """ A function that finds a peak in a list of unsorted integers
     Args:
         list_of_ints (list): an integer list
