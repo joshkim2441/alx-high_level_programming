@@ -4,7 +4,6 @@ http://0.0.0.0:5000/search_user with the letter as parameter
 """
 
 from sys import argv
-import json
 import requests
 
 if __name__ == "__main__":
