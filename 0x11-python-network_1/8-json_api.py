@@ -3,12 +3,12 @@
 http://0.0.0.0:5000/search_user with the letter as parameter
 """
 
-import sys
+from sys import argv
 import json
 import requests
 
 if __name__ == "__main__":
-    q = sys.argv[1] if len(sys.argv) == 2 else ""
+    q = argv[1] if len(argv) == 2 else ""
     url = 'http://0.0.0.0:5000/search_user'
     rsp = requests.post(url, data={'q': q})
     try:

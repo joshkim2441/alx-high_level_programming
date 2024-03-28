@@ -10,7 +10,7 @@ from urllib.request import Request, urlopen
 
 if __name__ == "__main__":
     url = argv[1]
-    val = {"emil": argv[2]}
+    val = {"email": argv[2]}
     data = urlencode(val).encode("ascii")
 
     request = Request(url, data)
