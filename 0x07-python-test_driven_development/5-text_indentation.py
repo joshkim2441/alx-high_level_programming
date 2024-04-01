@@ -16,6 +16,6 @@ def text_indentation(text):
         string = ""
         for a in list_text:
             a = a.strip(" ")
-            string = a + j if string is "" else string + "\n\n" + a + j
+            string = a + j if string == "" else string + "\n\n" + a + j
 
     print(string[:-3], end="")
