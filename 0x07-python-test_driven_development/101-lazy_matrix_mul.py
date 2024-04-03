@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Defines the lazy_matrix module"""
-import numpy as np
+import numpy
 
 
 def lazy_matrix_mul(m_a, m_b):
@@ -11,4 +11,4 @@ def lazy_matrix_mul(m_a, m_b):
     Return:
         The result of the multiplication
     """
-    return np.dot(m_a, m_b)
+    return (numpy.matmul(m_a, m_b))
