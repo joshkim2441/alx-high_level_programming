@@ -4,17 +4,17 @@
 const fs = require('fs');
 
 // The first argument is the file path
-let filePath = process.argv[2];
+const filePath = process.argv[2];
 
 // The second argument is the string to write
-let content = process.argv[3];
+const content = process.argv[3];
 fs.writeFile(filePath, content, 'utf8',
-function (err) {
+  function (err) {
     if (err) {
-        // If an error occurred during writing,
-        // print the error object
-        console.log(err);
+      // If an error occurred during writing,
+      // print the error object
+      console.log(err);
     } else {
-        console.log('File written successfully!');
+      console.log('File written successfully!');
     }
-});
+  });

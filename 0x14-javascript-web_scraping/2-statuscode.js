@@ -2,11 +2,13 @@
 // Display the status code of a GET request
 
 const request = require('request');
-const argv = process.argv;
+const url = process.argv[2];
 // The first argument is the URL to request (GET)
-let url = argv[2];
 
-request.get(url).on('response', function (response) {
-        // The status code is printed like this: code: <status code>
-    console.log(`code: ${response.statusCode}`);
+request(url, function (err, response, body) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('code: ' + response.statusCode);
+  }
 });
