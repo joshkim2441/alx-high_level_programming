@@ -3,18 +3,11 @@
 // matching the given integer
 
 const request = require('request');
-const argv = process.argv;
-const url = 'http://swapi.co/api/films/';
-
-request(url + argv[2], function (err, res, body) {
-  if (err) {
-    console.log(err);
-  } else {
-    try {
-      const json = JSON.parse(body);
-      console.log(json.title);
-    } catch (e) {
-      console.error('Error parsing JSON:', e);
+const endPoint = 'https://swapi-api.hbtn.io/api/films/' + process.argv[2];
+request({ url: endPoint, methods: 'GET' }, function (err, response, body) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(body && JSON.parse(body).title);
     }
-  }
 });
